@@ -1,18 +1,25 @@
 #!/bin/bash
 
-PREV_RELEASE=2.3.0
-NEXT_RELEASE=2.4.0
+PREV_RELEASE=2.4.0
+NEXT_RELEASE=2.4.1
 
 # Go into master project
 cd ../angular-translate
+
+# Ensure version in bower/package.json is now $NEXT_RELEASE
 
 # Ensure master is merged
 #git checkout master
 #git merge canary
 
+grunt prepare-release
+
 grunt changelog:$PREV_RELEASE
-git commit -m "Append changelog $NEXT_RELEASE"
+git commit -m "Append changelog $NEXT_RELEASE" .
 git tag $NEXT_RELEASE
+
+# TODO
+# npm publish
 
 function copy_lib() {
     _ID="$1"
@@ -26,9 +33,7 @@ function copy_lib() {
 # Main Lib
 cp -rf dist/angular-translate.js ../bower-angular-translate/
 cp -rf dist/angular-translate.min.js ../bower-angular-translate/
-pushd ../bower-angular-translate/
-git commit -m "Release 2.4.0" *.js && git tag $NEXT_RELEASE
-popd
+pushd ../bower-angular-translate/; git commit -m "Release $NEXT_RELEASE" *.js && git tag $NEXT_RELEASE; popd
 
 # Prepare bower satellite repositories
 copy_lib "angular-translate-handler-log"
@@ -39,5 +44,14 @@ copy_lib "angular-translate-loader-url"
 copy_lib "angular-translate-storage-cookie"
 copy_lib "angular-translate-storage-local"
 
-./generate-site.sh
+./generate_site.sh
 # TODO prepeare https://github.com/angular-translate/angular-translate/wiki/Making-a-release
+
+pushd ../docs
+rm -rf {css,docs,data,font,img,js,partials,plato,de,en,fr,ru,uk,zh-cn,zh-tw,index.html,favicon.ico}
+mv ../angular-translate/site/* .
+cp -prf docs/en/* .
+cp -rf docs/{de,en,fr,ru,uk,zh-cn,zh-tw} .
+git add -A
+git commit -m "Release $NEXT_RELEASE" .
+popd
