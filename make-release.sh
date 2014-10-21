@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PREV_RELEASE=2.4.0
-NEXT_RELEASE=2.4.1
+PREV_RELEASE=2.4.1
+NEXT_RELEASE=2.4.2
 
 # Go into master project
 cd ../angular-translate
@@ -18,8 +18,7 @@ grunt changelog:$PREV_RELEASE
 git commit -m "Append changelog $NEXT_RELEASE" .
 git tag $NEXT_RELEASE
 
-# TODO
-# npm publish
+npm publish
 
 function copy_lib() {
     _ID="$1"
@@ -45,7 +44,6 @@ copy_lib "angular-translate-storage-cookie"
 copy_lib "angular-translate-storage-local"
 
 ./generate_site.sh
-# TODO prepeare https://github.com/angular-translate/angular-translate/wiki/Making-a-release
 
 pushd ../docs
 rm -rf {css,docs,data,font,img,js,partials,plato,de,en,fr,ru,uk,zh-cn,zh-tw,index.html,favicon.ico}
