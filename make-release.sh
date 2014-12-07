@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PREV_RELEASE=2.4.1
-NEXT_RELEASE=2.4.2
+PREV_RELEASE=2.4.2
+NEXT_RELEASE=2.5.0
 
 # Go into master project
 cd ../angular-translate
@@ -25,6 +25,7 @@ function copy_lib() {
     cp -rf dist/$_ID/$_ID.js ../bower-$_ID/
     cp -rf dist/$_ID/$_ID.min.js ../bower-$_ID/
     pushd ../bower-$_ID/
+    #https://github.com/KidkArolis/kn-release/blob/master/bin/release
     git commit -m "Release $NEXT_RELEASE" . && git tag $NEXT_RELEASE
     popd
 }
