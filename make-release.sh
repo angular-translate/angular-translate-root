@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PREV_RELEASE=2.4.2
-NEXT_RELEASE=2.5.0
+PREV_RELEASE=2.5.0
+NEXT_RELEASE=2.5.2
 
 # Go into master project
 cd ../angular-translate
@@ -18,7 +18,7 @@ grunt changelog:$PREV_RELEASE
 git commit -m "Append changelog $NEXT_RELEASE" .
 git tag $NEXT_RELEASE
 
-npm publish
+#npm publish
 
 function copy_lib() {
     _ID="$1"
