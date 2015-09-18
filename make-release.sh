@@ -33,7 +33,7 @@ function copy_lib() {
 # Main Lib
 cp -rf dist/angular-translate.js ../bower-angular-translate/
 cp -rf dist/angular-translate.min.js ../bower-angular-translate/
-pushd ../bower-angular-translate/; git commit -m "Release $NEXT_RELEASE" *.js && git tag $NEXT_RELEASE; popd
+pushd ../bower-angular-translate/; git commit -m "Release $NEXT_RELEASE" . && git tag $NEXT_RELEASE; popd
 
 # Prepare bower satellite repositories
 copy_lib "angular-translate-handler-log"
