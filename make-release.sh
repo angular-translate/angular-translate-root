@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PREV_RELEASE=2.7.1
-NEXT_RELEASE=2.7.2
+PREV_RELEASE=2.7.2
+NEXT_RELEASE=2.8.0
 
 # Go into master project
 cd ../angular-translate
