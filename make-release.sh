@@ -1,10 +1,13 @@
 #!/bin/bash
 
-PREV_RELEASE=2.7.2
-NEXT_RELEASE=2.8.0
+PREV_RELEASE=2.8.0
+NEXT_RELEASE=2.8.1
 
 # Go into master project
 cd ../angular-translate
+
+echo "Using NodeJS `node -v`"
+[[ `which grunt &> /dev/null; echo $?` != 0 ]] && npm install -g grunt-cli
 
 # Ensure version in bower/package.json is now $NEXT_RELEASE
 
@@ -44,7 +47,7 @@ copy_lib "angular-translate-loader-url"
 copy_lib "angular-translate-storage-cookie"
 copy_lib "angular-translate-storage-local"
 
-./generate_site.sh
+npm run build-site
 
 pushd ../docs
 rm -rf {css,docs,data,font,img,js,partials,plato,de,en,fr,ru,uk,zh-cn,zh-tw,index.html,favicon.ico}
