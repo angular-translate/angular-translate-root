@@ -1,11 +1,11 @@
 #!/bin/bash
 
-NEXT_RELEASE=2.8.0
+NEXT_RELEASE=2.9.0
 
 function fixupLastCommit() {
     _ID="$1"
     pushd ../bower-$_ID/
-    git commit -q --amend --no-edit . && git tag -d -f $NEXT_RELEASE && git tag -a -m -f $NEXT_RELEASE
+    git commit -q --amend --no-edit . && git tag -d $NEXT_RELEASE && git tag -a -m -f $NEXT_RELEASE
     popd
 }
 
