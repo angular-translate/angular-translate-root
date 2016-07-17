@@ -1,11 +1,13 @@
 #!/bin/bash
 
-NEXT_RELEASE=2.8.0
+PREV_RELEASE=2.11.0
+NEXT_RELEASE=2.11.1
 
 function resetLastCommit() {
     _ID="$1"
     pushd ../bower-$_ID/
-    git tag -d $NEXT_RELEASE && git reset --hard HEAD@{1}
+    git tag -d $NEXT_RELEASE
+    git reset --hard $PREV_RELEASE
     popd
 }
 

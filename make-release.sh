@@ -1,13 +1,13 @@
 #!/bin/bash
 
-PREV_RELEASE=2.10.0
-NEXT_RELEASE=2.11.0
+PREV_RELEASE=2.11.0
+NEXT_RELEASE=2.11.1
 
 # Go into master project
 cd ../angular-translate
 
 echo "Using NodeJS `node -v`"
-[[ `which grunt &> /dev/null; echo $?` != 0 ]] && npm install -g grunt-cli
+export PATH=node_modules/.bin:$PATH
 
 # Ensure version in bower/package.json is now $NEXT_RELEASE
 
