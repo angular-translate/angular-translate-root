@@ -1,13 +1,13 @@
 #!/bin/bash
 
-PREV_RELEASE=2.11.1
-NEXT_RELEASE=2.12.0
+PREV_RELEASE=2.12.0
+NEXT_RELEASE=2.12.1
 
 function updateMeta() {
     _ID="$1"
     pushd ../bower-$_ID/ >> /dev/null
-    [[ -e bower.json ]] && perl -p -i -e 's/2.11.1/2.12.0/g' bower.json
-    [[ -e package.json ]] && perl -p -i -e 's/2.11.1/2.12.0/g' package.json
+    [[ -e bower.json ]] && perl -p -i -e 's/2.12.0/2.12.1/g' bower.json
+    [[ -e package.json ]] && perl -p -i -e 's/2.12.0/2.12.1/g' package.json
     popd >> /dev/null
 }
 

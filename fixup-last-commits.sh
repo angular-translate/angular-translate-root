@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PREV_RELEASE=2.11.1
-NEXT_RELEASE=2.12.0
+PREV_RELEASE=2.12.0
+NEXT_RELEASE=2.12.1
 
 function fixupLastCommit() {
     _ID="$1"
