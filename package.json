@@ -1,0 +1,24 @@
+{
+  "name": "dev",
+  "version": "1.0.0",
+  "description": "This are _developer only_ utilities.",
+  "main": "index.js",
+  "scripts": {
+    "make-canary-docs": "scripts/make-canary-docs.sh",
+    "make-release": "scripts/make-release.sh",
+    "repo-git-push": "scripts/repo-git-push.sh",
+    "repo-npm-publish": "scripts/repo-npm-publish.sh",
+    "shadowrepo-git-checkoutall": "scripts/shadowrepo-git-checkoutall.sh",
+    "shadowrepo-git-fixuplastcommit": "scripts/shadowrepo-git-fixuplastcommit.sh",
+    "shadowrepo-git-removenextreleasetag": "scripts/shadowrepo-git-removenextreleasetag.sh",
+    "shadowrepo-git-reset": "scripts/shadowrepo-git-reset.sh",
+    "shadowrepo-package-bumpversion": "node scripts/shadowrepo-package-bumpversion.js",
+    "start": "./shipit.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular-translate/angular-translate-root.git"
+  },
+  "author": "Jan Philipp <knallisworld@googlemail.com>",
+  "license": "MIT"
+}

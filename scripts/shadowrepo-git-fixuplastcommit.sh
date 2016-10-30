@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PREV_RELEASE=2.12.0
-NEXT_RELEASE=2.12.1
+[[ "$PREV_RELEASE" == "" ]] && echo "Missing env PREV_RELEASE" && exit 1
+[[ "$NEXT_RELEASE" == "" ]] && echo "Missing env NEXT_RELEASE" && exit 1
 
 function fixupLastCommit() {
     _ID="$1"

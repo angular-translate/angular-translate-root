@@ -19,11 +19,11 @@ git clone git@github.com:angular-translate/angular-translate-root.git
 
 (alternatively use HTTP via https://github.com/angular-translate/angular-translate-root.git)
 
-Jump into the repository and execute `checkout.sh` which will automatically checkout all repositories:
+Jump into the repository and execute `shadowrepo-git-checkoutall` which will automatically checkout all repositories:
 
 ```sh
 cd angular-translate-root
-./checkout.sh
+npm run shadowrepo-git-checkoutall
 ```
 
 After this, you have the following project structure (let's say, you have a directory `git` on top)
@@ -43,3 +43,7 @@ After this, you have the following project structure (let's say, you have a dire
                 /bower-angular-translate-storage-local
                 /docs
 ```
+
+## Release making
+
+Everything is automated, just follow `npm start`.

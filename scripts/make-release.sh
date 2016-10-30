@@ -1,19 +1,24 @@
 #!/bin/bash
 
-PREV_RELEASE=2.12.0
-NEXT_RELEASE=2.12.1
+[[ "$PREV_RELEASE" == "" ]] && echo "Missing env PREV_RELEASE" && exit 1
+[[ "$NEXT_RELEASE" == "" ]] && echo "Missing env NEXT_RELEASE" && exit 1
+
+echo
+echo
+echo "angular-translate release process"
+echo "================================="
+echo
+echo " - Ensure canary is merged into master (git merge canary)."
+echo " - Ensure active branch is master (git checkout master)."
+echo " - Ensure bower.json & package.json in master already updated to '$NEXT_RELEASE'."
+echo
+read
 
 # Go into master project
 cd ../angular-translate
 
 echo "Using NodeJS `node -v`"
 export PATH=node_modules/.bin:$PATH
-
-# Ensure version in bower/package.json is now $NEXT_RELEASE
-
-# Ensure master is merged
-#git checkout master
-#git merge canary
 
 grunt prepare-release
 
@@ -24,13 +29,13 @@ git tag $NEXT_RELEASE
 #npm publish
 
 function copy_lib() {
-    _ID="$1"
-    cp -rf dist/$_ID/$_ID.js ../bower-$_ID/
-    cp -rf dist/$_ID/$_ID.min.js ../bower-$_ID/
-    pushd ../bower-$_ID/
-    #https://github.com/KidkArolis/kn-release/blob/master/bin/release
-    git commit -m "Release $NEXT_RELEASE" . && git tag $NEXT_RELEASE
-    popd
+  _ID="$1"
+  cp -rf dist/$_ID/$_ID.js ../bower-$_ID/
+  cp -rf dist/$_ID/$_ID.min.js ../bower-$_ID/
+  pushd ../bower-$_ID/
+  #https://github.com/KidkArolis/kn-release/blob/master/bin/release
+  git commit -m "Release $NEXT_RELEASE" . && git tag $NEXT_RELEASE
+  popd
 }
 
 # Main Lib

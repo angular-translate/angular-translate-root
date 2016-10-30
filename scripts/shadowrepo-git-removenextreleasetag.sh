@@ -1,11 +1,11 @@
 #!/bin/bash
 
-PREV_RELEASE=2.12.0
-NEXT_RELEASE=2.12.1
+[[ "$PREV_RELEASE" == "" ]] && echo "Missing env PREV_RELEASE" && exit 1
+[[ "$NEXT_RELEASE" == "" ]] && echo "Missing env NEXT_RELEASE" && exit 1
 
 function resetLastCommit() {
     _ID="$1"
-    pushd ../bower-$_ID/
+    pushd ../bower-$_ID/ || (echo "Could not find $_ID" && exit 1)
     git tag -d $NEXT_RELEASE
     git reset --hard $PREV_RELEASE
     popd
