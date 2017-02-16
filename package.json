@@ -13,6 +13,7 @@
     "shadowrepo-git-removenextreleasetag": "scripts/shadowrepo-git-removenextreleasetag.sh",
     "shadowrepo-git-reset": "scripts/shadowrepo-git-reset.sh",
     "shadowrepo-package-bumpversion": "node scripts/shadowrepo-package-bumpversion.js",
+    "upload-github-release": "scripts/upload-github-release.sh",
     "start": "./shipit.sh"
   },
   "repository": {

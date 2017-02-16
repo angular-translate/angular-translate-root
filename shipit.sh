@@ -22,3 +22,7 @@ echo
 echo "Confirm shadow repositories should be published via NPM" && read
 npm run -s repo-npm-publish
 echo
+
+echo "Confirm upload release to GitHub" && read
+npm run -s upload-github-release
+echo 
