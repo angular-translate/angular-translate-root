@@ -3,6 +3,8 @@
 [[ "$PREV_RELEASE" == "" ]] && echo "Missing env PREV_RELEASE" && exit 1
 [[ "$NEXT_RELEASE" == "" ]] && echo "Missing env NEXT_RELEASE" && exit 1
 
+nvm use
+
 echo "Confirm shadow repositories will be resetted HARD" && read
 npm run -s shadowrepo-git-reset
 echo
