@@ -4,6 +4,7 @@
 [[ "$NEXT_RELEASE" == "" ]] && echo "Missing env NEXT_RELEASE" && exit 1
 
 nvm use
+GITHUB_ACCESS_TOKEN=$(cat github-access.json | jq -r '.secretToken')
 
 echo "Confirm shadow repositories will be resetted HARD" && read
 npm run -s shadowrepo-git-reset
@@ -26,5 +27,5 @@ npm run -s repo-npm-publish
 echo
 
 echo "Confirm upload release to GitHub" && read
-npm run -s upload-github-release
+GH_TOKEN=$GITHUB_ACCESS_TOKEN npm run -s upload-github-release
 echo 
