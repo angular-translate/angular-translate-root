@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Go into master project
-cd ../angular-translate
+cd repo/angular-translate
 
 npm run build-site
 

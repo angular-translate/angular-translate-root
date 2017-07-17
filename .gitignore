@@ -1,2 +1,8 @@
 github-access.json
 /node_modules
+
+# Local config
+/git-config.json
+
+# Actual project repositories
+/repo

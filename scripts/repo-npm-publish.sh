@@ -2,14 +2,14 @@
 
 function publishShadowRepo() {
     _ID="$1"
-    pushd ../bower-$_ID/ >> /dev/null
+    pushd repo/bower-$_ID/ >> /dev/null
     npm publish
     popd >> /dev/null
 }
 
 function publishRepo() {
     _ID="$1"
-    pushd ../$_ID/ >> /dev/null
+    pushd repo/$_ID/ >> /dev/null
     npm publish
     popd >> /dev/null
 }

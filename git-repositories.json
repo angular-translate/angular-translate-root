@@ -1,0 +1,40 @@
+{
+  "repositories": {
+    "angular-translate": {
+      "url": "git@github.com:angular-translate/angular-translate.git"
+    },
+    "angular-translate.io": {
+      "url": "git@github.com:angular-translate/angular-translate.github.io.git"
+    },
+    "bower-angular-translate": {
+      "url": "git@github.com:angular-translate/bower-angular-translate.git"
+    },
+    "bower-angular-translate-handler-log": {
+      "url": "git@github.com:angular-translate/bower-angular-translate-handler-log.git"
+    },
+    "bower-angular-translate-interpolation-messageformat": {
+      "url": "git@github.com:angular-translate/bower-angular-translate-interpolation-messageformat.git"
+    },
+    "bower-angular-translate-loader-partial": {
+      "url": "git@github.com:angular-translate/bower-angular-translate-loader-partial.git"
+    },
+    "bower-angular-translate-loader-static-files": {
+      "url": "git@github.com:angular-translate/bower-angular-translate-loader-static-files.git"
+    },
+    "bower-angular-translate-loader-url": {
+      "url": "git@github.com:angular-translate/bower-angular-translate-loader-url.git"
+    },
+    "bower-angular-translate-storage-cookie": {
+      "url": "git@github.com:angular-translate/bower-angular-translate-storage-cookie.git"
+    },
+    "bower-angular-translate-storage-local": {
+      "url": "git@github.com:angular-translate/bower-angular-translate-storage-local.git"
+    },
+    "docs": {
+      "url": "git@github.com:angular-translate/docs.git"
+    },
+    "docs-canary": {
+      "url": "git@github.com:angular-translate/docs-canary.git"
+    }
+  }
+}

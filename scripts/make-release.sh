@@ -15,7 +15,7 @@ echo
 read
 
 # Go into master project
-cd ../angular-translate
+cd repo/angular-translate
 
 echo "Using NodeJS `node -v`"
 export PATH=node_modules/.bin:$PATH

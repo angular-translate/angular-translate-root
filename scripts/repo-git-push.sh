@@ -2,7 +2,7 @@
 
 function pushShadowRepo() {
     _ID="$1"
-    pushd ../bower-$_ID/ >> /dev/null
+    pushd repo/bower-$_ID/ >> /dev/null
     git push origin
     git push --tags origin
     popd >> /dev/null
@@ -10,7 +10,7 @@ function pushShadowRepo() {
 
 function pushRepo() {
     _ID="$1"
-    pushd ../$_ID/ >> /dev/null
+    pushd repo/$_ID/ >> /dev/null
     git push origin
     git push --tags origin
     popd >> /dev/null

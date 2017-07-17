@@ -34,8 +34,8 @@ const bumpPackageVersion = (package, filepath, currentVersion, nextVersion) => {
   "angular-translate-storage-cookie", 
   "angular-translate-storage-local"
 ].forEach((moduleId) => {
-  const bowerFilepath = path.join(path.parse(__dirname).dir, '..', `bower-${moduleId}`, 'bower.json');
-  const npmFilepath = path.join(path.parse(__dirname).dir, '..', `bower-${moduleId}`, 'package.json');
+  const bowerFilepath = path.join(path.parse(__dirname).dir, 'repo', `bower-${moduleId}`, 'bower.json');
+  const npmFilepath = path.join(path.parse(__dirname).dir, 'repo', `bower-${moduleId}`, 'package.json');
   bumpPackageVersion(moduleId, bowerFilepath, currentVersion, nextVersion);
   bumpPackageVersion(moduleId, npmFilepath, currentVersion, nextVersion);
 });

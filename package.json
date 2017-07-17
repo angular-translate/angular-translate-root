@@ -4,11 +4,11 @@
   "description": "This are _developer only_ utilities.",
   "main": "index.js",
   "scripts": {
+    "init": "init.sh",
     "make-canary-docs": "scripts/make-canary-docs.sh",
     "make-release": "scripts/make-release.sh",
     "repo-git-push": "scripts/repo-git-push.sh",
     "repo-npm-publish": "scripts/repo-npm-publish.sh",
-    "shadowrepo-git-checkoutall": "scripts/shadowrepo-git-checkoutall.sh",
     "shadowrepo-git-fixuplastcommit": "scripts/shadowrepo-git-fixuplastcommit.sh",
     "shadowrepo-git-removenextreleasetag": "scripts/shadowrepo-git-removenextreleasetag.sh",
     "shadowrepo-git-reset": "scripts/shadowrepo-git-reset.sh",

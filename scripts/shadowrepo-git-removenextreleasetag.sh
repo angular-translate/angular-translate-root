@@ -5,7 +5,7 @@
 
 function resetLastCommit() {
     _ID="$1"
-    pushd ../bower-$_ID/ || (echo "Could not find $_ID" && exit 1)
+    pushd repo/bower-$_ID/ || (echo "Could not find $_ID" && exit 1)
     git tag -d $NEXT_RELEASE
     git reset --hard $PREV_RELEASE
     popd

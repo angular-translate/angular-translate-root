@@ -1,38 +1,31 @@
-# angular-translate-root
+# angular-translate: org
 
 This are _developer only_ utilities.
 
 ## Usage
 
-Using a terminal, go to the designated place for your _translate_ repository. Create an umbrella directory and switch into it.
-
-```sh
-mkdir translate
-cd translate
-```
-
 Checkout this repository with
 
 ```sh
-git clone git@github.com:angular-translate/angular-translate-root.git
+git clone git@github.com:angular-translate/org.git angular-translate
 ```
 
-(alternatively use HTTP via https://github.com/angular-translate/angular-translate-root.git)
+(alternatively use HTTP via https://github.com/angular-translate/org.git)
 
-Jump into the repository and execute `shadowrepo-git-checkoutall` which will automatically checkout all repositories:
+Jump into the repository and execute `npm run init` which will automatically checkout all required repositories:
 
 ```sh
-cd angular-translate-root
-npm run shadowrepo-git-checkoutall
+cd angular-translate
+npm run init
 ```
 
 After this, you have the following project structure (let's say, you have a directory `git` on top)
 
 ```
 /git
-     /translate
+     /angular-translate (that's *this* repository)
+        /repo
                 /angular-translate
-                /angular-translate-root
                 /bower-angular-translate
                 /bower-angular-translate-handler-log
                 /bower-angular-translate-interpolation-messageformat
@@ -42,7 +35,23 @@ After this, you have the following project structure (let's say, you have a dire
                 /bower-angular-translate-storage-cookie
                 /bower-angular-translate-storage-local
                 /docs
+                /docs-canary
 ```
+
+## Config
+
+You can place a file named `git-config.json` at the root of this project.
+
+```json
+{
+  "config": {
+    "user.email": "knallisworld@googlemail.com",
+    "user.name": "knalli"
+  }
+}
+```
+
+Each entry of `$.config` will be used as a custom Git local config entry. Maybe useful for dedicated user settings like name or gpg signing keys.
 
 ## Release making
 

@@ -5,7 +5,7 @@
 
 function fixupLastCommit() {
     _ID="$1"
-    pushd ../bower-$_ID/
+    pushd repo/bower-$_ID/
     git commit -q --amend --no-edit . && git tag -d $NEXT_RELEASE && git tag -a -m -f $NEXT_RELEASE
     popd
 }
